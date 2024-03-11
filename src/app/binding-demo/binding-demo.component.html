@@ -1,0 +1,21 @@
+<style>
+</style>
+
+1-way binding:<br>
+<input type="text" [disabled]="zakaz" [value]="pocitadlo"/>
+<input type="button" (click)="pocitaj()" value="pocitaj">
+<input type="button" (click)="zakazPovol()" value="zakaz / povol">
+<br/>
+
+2-way binding (vlastne):<br>
+<input type="text" [value]="hodnota1" (input)="hodnota1=$any($event.target).value">
+<input type="button" (click)="get1()" value="zaloguj">
+<input type="button" (click)="set1()" value="zmen">
+<br/>
+
+2-way binding (FormsModule):<br>
+<input type="text" [(ngModel)]="hodnota2">
+<input type="button" (click)="get2()" value="zaloguj">
+<input type="button" (click)="set2()" value="zmen">
+
+<router-outlet />

@@ -1,0 +1,32 @@
+
+<label for="hodnota">Samostatna hodnota: </label>
+<input id="hodnota" type="text" [formControl]="hodnota">
+<br>
+<br>
+
+<form [formGroup]="formular" (ngSubmit)="onSubmit()">
+
+  <label for="name">Nazov: </label>
+  <input id="name" type="text" formControlName="name">
+  <br>
+
+  <label for="author">Autor: </label>
+  <input id="author" type="text" formControlName="author">
+  <br>
+
+  <div formGroupName="publisher">
+    <label for="pubname">Publisher Name: </label>
+    <input id="pubname" type="text" formControlName="name">
+    <br>
+
+    <label for="address">Publisher Address: </label>
+    <input id="address" type="text" formControlName="address">
+    <br>
+  </div>
+
+  <input type="button" (click)="zmenForm()" value="nastav demo hodnoty">
+  <button type="submit" [disabled]="!formular.valid">odosli</button>
+
+  <p>Form Status: {{ formular.status }}</p>
+
+</form>
